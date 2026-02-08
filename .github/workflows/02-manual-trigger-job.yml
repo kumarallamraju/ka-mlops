@@ -1,6 +1,18 @@
 name: Manually trigger an Azure Machine Learning job
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/model/**'
+      - 'src/job.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/model/**'
+      - 'src/job.yml'
   workflow_dispatch:
 
 jobs:
