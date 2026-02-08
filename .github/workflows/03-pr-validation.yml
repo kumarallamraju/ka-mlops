@@ -1,0 +1,25 @@
+name: Pull Request Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    
+    - name: Placeholder
+      run: |
+        echo "Will add code checks here in next challenge"
+    
+    - name: Display PR info
+      run: |
+        echo "PR #${{ github.event.pull_request.number }}"
+        echo "PR Title: ${{ github.event.pull_request.title }}"
+        echo "PR Author: ${{ github.event.pull_request.user.login }}"
+        echo "Base Branch: ${{ github.event.pull_request.base.ref }}"
+        echo "Head Branch: ${{ github.event.pull_request.head.ref }}"
